@@ -17,7 +17,7 @@ document.getElementById('questionForm').addEventListener('submit', async functio
 const getAnswer = async (text) => {
   try {
 
-    const netlifyResponse = await fetch('/.netlify/function/apiKey');
+    const netlifyResponse = await fetch('/.netlify/functions/apiKey');
 
     const API_KEY = netlifyResponse?.data;
 
