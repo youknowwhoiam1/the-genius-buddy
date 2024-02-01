@@ -18,6 +18,7 @@ const getAnswer = async (text) => {
   try {
 
     let netlifyResponse = await fetch('/.netlify/functions/apiKey');
+    netlifyResponse = JSON.parse(netlifyResponse);
     console.log(
       netlifyResponse?.geminiApiKey
     )
