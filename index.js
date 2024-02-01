@@ -16,7 +16,6 @@ document.getElementById('questionForm').addEventListener('submit', async functio
 
 const getAnswer = async (text) => {
   try {
-    const API_KEY = 'AIzaSyBbGD3N_YzG-zZSyq4I445J7PCx9agX6v0';
 
     const headers = {
       'Content-Type': 'application/json'
