@@ -1,7 +1,7 @@
 exports.handler = async event => {
-    const API_KEY = 'AIzaSyBbGD3N_YzG-zZSyq4I445J7PCx9agX6v0';
+    const geminiApiKey = process.env.API_KEY;
     return {
         statusCode: 200,
-        body: JSON.stringify({ API_KEY })
+        body: JSON.stringify({ geminiApiKey })
     }
 }
