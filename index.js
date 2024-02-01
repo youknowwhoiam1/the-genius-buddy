@@ -17,18 +17,7 @@ document.getElementById('questionForm').addEventListener('submit', async functio
 const getAnswer = async (text) => {
   try {
 
-    // const netlifyUrl = 'https://the-genius-buddy.netlify.app/.netlify/functions/apiKey';
-    // const netlifyOptions = {
-    //   method: 'GET',
-    //   netlifyUrl
-    // }
-    // let netlifyResponse = await axios(netlifyOptions);
-    // console.log('1', netlifyResponse);
-    // netlifyResponse = netlifyResponse?.body;
-    // console.log('2', netlifyResponse);
-    // netlifyResponse = JSON.parse(netlifyResponse);
-
-    const geminiApiKey = process.env.API_KEY;
+    let netlifyResponse = await fetch('/.netlify/functions/apiKey');
 
     const headers = {
       'Content-Type': 'application/json'
