@@ -18,11 +18,14 @@ const getAnswer = async (text) => {
   try {
 
     let netlifyResponse = await fetch('/.netlify/functions/apiKey');
+    console.log(
+      netlifyResponse
+    )
 
     const headers = {
       'Content-Type': 'application/json'
     };
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${geminiApiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${}`;
     const data = {
       contents: { parts: { text } }
     }
