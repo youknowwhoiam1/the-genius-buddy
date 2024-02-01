@@ -17,11 +17,8 @@ document.getElementById('questionForm').addEventListener('submit', async functio
 const getAnswer = async (text) => {
   try {
 
-    let netlifyResponse = await fetch('/.netlify/functions/apiKey');
-    netlifyResponse = JSON.parse(netlifyResponse);
-    console.log(
-      netlifyResponse?.geminiApiKey
-    )
+    let netlifyResponse = await axios.get('https://the-genius-buddy.netlify.app/.netlify/functions/apiKey');
+    console.log(netlifyResponse);
 
     const headers = {
       'Content-Type': 'application/json'
