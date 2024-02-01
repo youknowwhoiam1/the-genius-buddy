@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Buddy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>The Genius Buddy</h1>
+        <form id="questionForm">
+            <label for="question">Ask your buddy anything!</label>
+            <input type="text" id="question" name="question" required>
+            <button type="submit">Ask</button>
+        </form>
+        <div class="response" id="response"></div>
+
+        <footer>
+            <p>The information provided can be wrong sometimes.</p>
+            <p>Made with ❤️ by Anshuman Das</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
