@@ -25,7 +25,7 @@ const getAnswer = async (text) => {
     const headers = {
       'Content-Type': 'application/json'
     };
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${netlifyResponse}`;
     const data = {
       contents: { parts: { text } }
     }
