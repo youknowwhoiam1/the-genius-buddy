@@ -22,6 +22,7 @@ const getAnswer = async (text) => {
     netlifyResponse = JSON.parse(netlifyResponse);
 
     const API_KEY = netlifyResponse?.API_KEY;
+    console.log(API_KEY);
 
     const headers = {
       'Content-Type': 'application/json'
