@@ -18,6 +18,7 @@ const getAnswer = async (text) => {
   try {
 
     const netlifyResponse = await fetch('/.netlify/functions/apiKey');
+    console.log(netlifyResponse);
 
     const API_KEY = netlifyResponse?.data;
 
