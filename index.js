@@ -20,7 +20,7 @@ const getAnswer = async (text) => {
     const headers = {
       'Content-Type': 'application/json'
     };
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.API_KEY}`;
     const data = {
       contents: { parts: { text } }
     }
