@@ -19,7 +19,7 @@ const getAnswer = async (text) => {
 
     let netlifyResponse = await fetch('/.netlify/functions/apiKey');
     console.log(
-      netlifyResponse
+      netlifyResponse?.response
     )
 
     const headers = {
