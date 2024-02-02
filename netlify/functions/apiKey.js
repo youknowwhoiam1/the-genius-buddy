@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 exports.handler = async event => {
     const geminiApiKey = process.env.API_KEY;
     const { text } = event.queryStringParameters;
