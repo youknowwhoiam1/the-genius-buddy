@@ -17,27 +17,35 @@ document.getElementById('questionForm').addEventListener('submit', async functio
 const getAnswer = async (text) => {
   try {
 
-    let netlifyResponse = await axios.get('https://the-genius-buddy.netlify.app/.netlify/functions/apiKey');
-    console.log(netlifyResponse);
-
-    const headers = {
-      'Content-Type': 'application/json'
-    };
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${netlifyResponse?.data?.geminiApiKey}`;
-    const data = {
-      contents: { parts: { text } }
+    let netlifyOptions = {
+      method: 'GET',
+      url: 'https://the-genius-buddy.netlify.app/.netlify/functions/apiKey',
+      params: {
+        text
+      }
     }
+    let response = await axios(netlifyOptions);
+    response = response?.data?.responseOfQuery;
+    return response;
 
-    const options = {
-      method: 'POST',
-      headers,
-      url,
-      data
-    }
+    // const headers = {
+    //   'Content-Type': 'application/json'
+    // };
+    // const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${netlifyResponse?.data?.geminiApiKey}`;
+    // const data = {
+    //   contents: { parts: { text } }
+    // }
 
-    const response = await axios(options);
-    let responseOfQuery = response?.data?.candidates[0]?.content?.parts[0]?.text;
-    return responseOfQuery;
+    // const options = {
+    //   method: 'POST',
+    //   headers,
+    //   url,
+    //   data
+    // }
+
+    // const response = await axios(options);
+    // let responseOfQuery = response?.data?.candidates[0]?.content?.parts[0]?.text;
+    // return responseOfQuery;
   } catch (error) {
     console.log(error?.response?.data || error?.response || error);
   }
